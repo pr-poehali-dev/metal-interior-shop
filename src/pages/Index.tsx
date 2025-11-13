@@ -258,6 +258,61 @@ const Index = () => {
               <h3 className="text-lg font-light mb-2">Садовая мебель</h3>
               <p className="text-sm text-muted-foreground">Сталь с подсветкой, уличное применение</p>
             </motion.div>
+            <motion.div variants={staggerItem} transition={{ delay: 0.5 }} className="group cursor-pointer">
+              <div className="relative overflow-hidden mb-4">
+                <img 
+                  src="https://cdn.poehali.dev/files/a24d85e9-66a0-4a42-93e4-027caebb833d.jpeg" 
+                  alt="Консоль с каллиграфией"
+                  className="w-full h-[350px] object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <h3 className="text-lg font-light mb-2">Консоль дизайнерская</h3>
+              <p className="text-sm text-muted-foreground">Гравировка на металле, авторская</p>
+            </motion.div>
+            <motion.div variants={staggerItem} transition={{ delay: 0.6 }} className="group cursor-pointer">
+              <div className="relative overflow-hidden mb-4">
+                <img 
+                  src="https://cdn.poehali.dev/files/5bf3af87-47cb-4fcf-adbd-259f8c93f8d8.jpeg" 
+                  alt="Обеденный стол"
+                  className="w-full h-[350px] object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <h3 className="text-lg font-light mb-2">Обеденный стол</h3>
+              <p className="text-sm text-muted-foreground">Чёрная сталь, геометрические ножки</p>
+            </motion.div>
+            <motion.div variants={staggerItem} transition={{ delay: 0.7 }} className="group cursor-pointer">
+              <div className="relative overflow-hidden mb-4">
+                <img 
+                  src="https://cdn.poehali.dev/files/1c955056-fa4f-4f9b-806b-9d9179423252.jpeg" 
+                  alt="Журнальный столик с подсветкой"
+                  className="w-full h-[350px] object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <h3 className="text-lg font-light mb-2">Столик с подсветкой</h3>
+              <p className="text-sm text-muted-foreground">Латунь, стекло, встроенная LED</p>
+            </motion.div>
+            <motion.div variants={staggerItem} transition={{ delay: 0.8 }} className="group cursor-pointer">
+              <div className="relative overflow-hidden mb-4">
+                <img 
+                  src="https://cdn.poehali.dev/files/637e74a0-2ade-48e4-a218-379f674f94f3.jpeg" 
+                  alt="Светильники ресторанные"
+                  className="w-full h-[350px] object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <h3 className="text-lg font-light mb-2">Светильники премиум</h3>
+              <p className="text-sm text-muted-foreground">Металл, стекло, коммерческое применение</p>
+            </motion.div>
+            <motion.div variants={staggerItem} transition={{ delay: 0.9 }} className="group cursor-pointer">
+              <div className="relative overflow-hidden mb-4">
+                <img 
+                  src="https://cdn.poehali.dev/files/6211cba8-5c85-41d6-8606-9b7c1e1608e4.jpeg" 
+                  alt="Кресла дизайнерские"
+                  className="w-full h-[350px] object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <h3 className="text-lg font-light mb-2">Дизайнерские кресла</h3>
+              <p className="text-sm text-muted-foreground">Медная рамка, текстиль, премиум</p>
+            </motion.div>
           </motion.div>
           <motion.div 
             className="mt-12 text-center"
