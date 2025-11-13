@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import Logo from "@/components/Logo";
+import { useToast } from "@/hooks/use-toast";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -26,6 +27,56 @@ const staggerItem = {
 
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name') as string,
+      phone: formData.get('phone') as string,
+      email: formData.get('email') as string,
+      message: formData.get('message') as string,
+    };
+
+    try {
+      const response = await fetch('https://functions.poehali.dev/19c75b28-d750-4c13-b264-82e4f06a173f', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        toast({
+          title: "Заявка отправлена!",
+          description: "Мы свяжемся с вами в ближайшее время.",
+        });
+        e.currentTarget.reset();
+        
+        // Open WhatsApp in new tab
+        if (result.whatsapp_url) {
+          window.open(result.whatsapp_url, '_blank');
+        }
+      } else {
+        throw new Error(result.error || 'Ошибка отправки');
+      }
+    } catch (error) {
+      toast({
+        title: "Ошибка",
+        description: "Не удалось отправить заявку. Попробуйте позже.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -181,6 +232,17 @@ const Index = () => {
                 </p>
               </Card>
             </motion.div>
+          </motion.div>
+          <motion.div 
+            className="mt-12 text-center"
+            {...fadeInUp}
+          >
+            <Button size="lg" className="font-light tracking-wide" onClick={() => {
+              const contactSection = document.getElementById('contact');
+              contactSection?.scrollIntoView({ behavior: 'smooth' });
+            }}>
+              Узнать стоимость
+            </Button>
           </motion.div>
         </div>
       </section>
@@ -479,13 +541,163 @@ const Index = () => {
               <p className="text-sm text-muted-foreground">Латунь, стекло, коммерческое оборудование</p>
             </motion.div>
           </motion.div>
+        </div>
+      </section>
+
+      <section className="py-20 px-6 bg-card">
+        <div className="container mx-auto max-w-6xl">
           <motion.div 
-            className="mt-12 text-center"
+            className="text-center mb-16"
             {...fadeInUp}
           >
-            <Button size="lg" variant="outline" className="font-light tracking-wide">
-              Смотреть все проекты
-            </Button>
+            <h2 className="text-4xl font-light mb-4">Как мы работаем</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Прозрачный процесс от идеи до установки готового изделия
+            </p>
+          </motion.div>
+          <motion.div 
+            className="grid md:grid-cols-5 gap-6"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <motion.div variants={staggerItem} transition={{ delay: 0 }} className="text-center space-y-4">
+              <div className="w-20 h-20 bg-primary/10 flex items-center justify-center mx-auto rounded-full">
+                <Icon name="MessageSquare" size={36} className="text-primary" />
+              </div>
+              <div className="space-y-2">
+                <div className="text-3xl font-light text-primary">01</div>
+                <h3 className="text-lg font-light">Консультация</h3>
+                <p className="text-sm text-muted-foreground">
+                  Обсуждаем ваши идеи и требования к изделию
+                </p>
+              </div>
+            </motion.div>
+            <motion.div variants={staggerItem} transition={{ delay: 0.1 }} className="text-center space-y-4">
+              <div className="w-20 h-20 bg-primary/10 flex items-center justify-center mx-auto rounded-full">
+                <Icon name="Pencil" size={36} className="text-primary" />
+              </div>
+              <div className="space-y-2">
+                <div className="text-3xl font-light text-primary">02</div>
+                <h3 className="text-lg font-light">Разработка чертежей</h3>
+                <p className="text-sm text-muted-foreground">
+                  Создаём детальные эскизы и 3D-визуализацию
+                </p>
+              </div>
+            </motion.div>
+            <motion.div variants={staggerItem} transition={{ delay: 0.2 }} className="text-center space-y-4">
+              <div className="w-20 h-20 bg-primary/10 flex items-center justify-center mx-auto rounded-full">
+                <Icon name="FileCheck" size={36} className="text-primary" />
+              </div>
+              <div className="space-y-2">
+                <div className="text-3xl font-light text-primary">03</div>
+                <h3 className="text-lg font-light">Согласование</h3>
+                <p className="text-sm text-muted-foreground">
+                  Утверждаем проект и все детали с клиентом
+                </p>
+              </div>
+            </motion.div>
+            <motion.div variants={staggerItem} transition={{ delay: 0.3 }} className="text-center space-y-4">
+              <div className="w-20 h-20 bg-primary/10 flex items-center justify-center mx-auto rounded-full">
+                <Icon name="Wrench" size={36} className="text-primary" />
+              </div>
+              <div className="space-y-2">
+                <div className="text-3xl font-light text-primary">04</div>
+                <h3 className="text-lg font-light">Производство</h3>
+                <p className="text-sm text-muted-foreground">
+                  Изготавливаем изделие на собственном производстве
+                </p>
+              </div>
+            </motion.div>
+            <motion.div variants={staggerItem} transition={{ delay: 0.4 }} className="text-center space-y-4">
+              <div className="w-20 h-20 bg-primary/10 flex items-center justify-center mx-auto rounded-full">
+                <Icon name="Truck" size={36} className="text-primary" />
+              </div>
+              <div className="space-y-2">
+                <div className="text-3xl font-light text-primary">05</div>
+                <h3 className="text-lg font-light">Доставка</h3>
+                <p className="text-sm text-muted-foreground">
+                  Доставляем и устанавливаем изделие на объекте
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-20 px-6 bg-muted">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div 
+            className="text-center mb-16"
+            {...fadeInUp}
+          >
+            <h2 className="text-4xl font-light mb-4">Отзывы клиентов</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Нам доверяют те, кто ценит качество и индивидуальный подход
+            </p>
+          </motion.div>
+          <motion.div 
+            className="grid md:grid-cols-3 gap-8"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <motion.div variants={staggerItem} transition={{ delay: 0 }}>
+              <Card className="p-8 space-y-4 border-0 shadow-sm h-full">
+                <div className="flex gap-1 mb-2">
+                  <Icon name="Star" size={20} className="text-primary fill-primary" />
+                  <Icon name="Star" size={20} className="text-primary fill-primary" />
+                  <Icon name="Star" size={20} className="text-primary fill-primary" />
+                  <Icon name="Star" size={20} className="text-primary fill-primary" />
+                  <Icon name="Star" size={20} className="text-primary fill-primary" />
+                </div>
+                <p className="text-muted-foreground leading-relaxed italic">
+                  "Заказывали декоративные панели для гостиной. Работа выполнена безупречно — каждая деталь продумана. Качество металла и обработки на высшем уровне. Рекомендую!"
+                </p>
+                <div className="pt-4 border-t">
+                  <p className="font-light">Анна Сергеева</p>
+                  <p className="text-sm text-muted-foreground">Владелец квартиры в ЖК "Символ"</p>
+                </div>
+              </Card>
+            </motion.div>
+            <motion.div variants={staggerItem} transition={{ delay: 0.1 }}>
+              <Card className="p-8 space-y-4 border-0 shadow-sm h-full">
+                <div className="flex gap-1 mb-2">
+                  <Icon name="Star" size={20} className="text-primary fill-primary" />
+                  <Icon name="Star" size={20} className="text-primary fill-primary" />
+                  <Icon name="Star" size={20} className="text-primary fill-primary" />
+                  <Icon name="Star" size={20} className="text-primary fill-primary" />
+                  <Icon name="Star" size={20} className="text-primary fill-primary" />
+                </div>
+                <p className="text-muted-foreground leading-relaxed italic">
+                  "Сотрудничали при оформлении ресторана. Ребята сделали лестничное ограждение и барную стойку из латуни. Получилось стильно и дорого. Гости постоянно спрашивают, кто делал."
+                </p>
+                <div className="pt-4 border-t">
+                  <p className="font-light">Дмитрий Ковалёв</p>
+                  <p className="text-sm text-muted-foreground">Владелец ресторана "Gatsby"</p>
+                </div>
+              </Card>
+            </motion.div>
+            <motion.div variants={staggerItem} transition={{ delay: 0.2 }}>
+              <Card className="p-8 space-y-4 border-0 shadow-sm h-full">
+                <div className="flex gap-1 mb-2">
+                  <Icon name="Star" size={20} className="text-primary fill-primary" />
+                  <Icon name="Star" size={20} className="text-primary fill-primary" />
+                  <Icon name="Star" size={20} className="text-primary fill-primary" />
+                  <Icon name="Star" size={20} className="text-primary fill-primary" />
+                  <Icon name="Star" size={20} className="text-primary fill-primary" />
+                </div>
+                <p className="text-muted-foreground leading-relaxed italic">
+                  "Обратились с нестандартной задачей — нужна была садовая беседка с ажурными элементами. MHKS Steel воплотили нашу идею в жизнь. Работают быстро, профессионально, с душой."
+                </p>
+                <div className="pt-4 border-t">
+                  <p className="font-light">Елена Васильева</p>
+                  <p className="text-sm text-muted-foreground">Дизайнер интерьеров</p>
+                </div>
+              </Card>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -500,7 +712,10 @@ const Index = () => {
             Каждое изделие разрабатывается по эскизам клиента с учётом особенностей интерьера.<br />
             Мы воплощаем в металле самые сложные дизайнерские идеи
           </p>
-          <Button size="lg" variant="outline" className="bg-transparent border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary mt-6">
+          <Button size="lg" variant="outline" className="bg-transparent border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary mt-6" onClick={() => {
+            const contactSection = document.getElementById('contact');
+            contactSection?.scrollIntoView({ behavior: 'smooth' });
+          }}>
             Обсудить ваш проект
           </Button>
         </div>
@@ -577,21 +792,26 @@ const Index = () => {
           </motion.div>
           <motion.form 
             className="space-y-6 max-w-xl mx-auto"
+            onSubmit={handleSubmit}
             {...fadeInUp}
           >
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-sm tracking-wide">Имя</label>
+                <label className="text-sm tracking-wide">Имя *</label>
                 <input 
-                  type="text" 
+                  type="text"
+                  name="name"
+                  required
                   className="w-full px-4 py-3 bg-card border border-input focus:outline-none focus:ring-2 focus:ring-ring"
                   placeholder="Ваше имя"
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-sm tracking-wide">Телефон</label>
+                <label className="text-sm tracking-wide">Телефон *</label>
                 <input 
-                  type="tel" 
+                  type="tel"
+                  name="phone"
+                  required
                   className="w-full px-4 py-3 bg-card border border-input focus:outline-none focus:ring-2 focus:ring-ring"
                   placeholder="+7 (___) ___-__-__"
                 />
@@ -600,7 +820,8 @@ const Index = () => {
             <div className="space-y-2">
               <label className="text-sm tracking-wide">Email</label>
               <input 
-                type="email" 
+                type="email"
+                name="email"
                 className="w-full px-4 py-3 bg-card border border-input focus:outline-none focus:ring-2 focus:ring-ring"
                 placeholder="your@email.com"
               />
@@ -609,12 +830,13 @@ const Index = () => {
               <label className="text-sm tracking-wide">Описание проекта</label>
               <textarea 
                 rows={4}
+                name="message"
                 className="w-full px-4 py-3 bg-card border border-input focus:outline-none focus:ring-2 focus:ring-ring resize-none"
                 placeholder="Расскажите о вашем проекте"
               />
             </div>
-            <Button size="lg" className="w-full font-light tracking-wide">
-              Отправить заявку
+            <Button size="lg" type="submit" disabled={isSubmitting} className="w-full font-light tracking-wide">
+              {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
             </Button>
           </motion.form>
         </div>
