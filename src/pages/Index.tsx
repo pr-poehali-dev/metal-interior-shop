@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 import { Card } from "@/components/ui/card";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -23,6 +24,8 @@ const staggerItem = {
 };
 
 const Index = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-background">
       <header className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
@@ -36,10 +39,53 @@ const Index = () => {
           <Button variant="default" className="hidden md:flex">
             Заказать консультацию
           </Button>
-          <button className="md:hidden">
-            <Icon name="Menu" size={24} />
+          <button 
+            className="md:hidden"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Меню"
+          >
+            <Icon name={mobileMenuOpen ? "X" : "Menu"} size={24} />
           </button>
         </nav>
+
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden bg-background border-b border-border overflow-hidden"
+            >
+              <div className="container mx-auto px-6 py-4 space-y-4">
+                <a 
+                  href="#services" 
+                  className="block text-sm tracking-wide hover:text-primary transition-colors py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Услуги
+                </a>
+                <a 
+                  href="#portfolio" 
+                  className="block text-sm tracking-wide hover:text-primary transition-colors py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Портфолио
+                </a>
+                <a 
+                  href="#contact" 
+                  className="block text-sm tracking-wide hover:text-primary transition-colors py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Контакты
+                </a>
+                <Button variant="default" className="w-full mt-2">
+                  Заказать консультацию
+                </Button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </header>
 
       <section className="pt-32 pb-20 px-6">
