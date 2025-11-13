@@ -7,8 +7,8 @@ const Logo = ({ className = "" }: { className?: string }) => {
         <span className="text-2xl font-serif font-bold text-foreground ml-1">S</span>
       </div>
       <div className="flex flex-col leading-tight">
-        <span className="text-[10px] font-medium tracking-wider text-muted-foreground">МШКС</span>
-        <span className="text-sm font-light tracking-widest">STEEL</span>
+        <span className="text-[10px] font-medium tracking-wider text-muted-foreground">MHKS</span>
+        <span className="text-sm font-light tracking-widest">Steel</span>
       </div>
     </div>
   );

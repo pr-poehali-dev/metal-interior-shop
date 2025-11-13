@@ -331,7 +331,7 @@ const Index = () => {
             </div>
           </div>
           <div className="mt-12 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-            <p>&copy; 2024 МШКС Сталь. Все права защищены</p>
+            <p>&copy; 2024 MHKS Steel. Все права защищены</p>
           </div>
         </div>
       </footer>
