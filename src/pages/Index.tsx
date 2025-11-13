@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import Logo from "@/components/Logo";
 import { useToast } from "@/hooks/use-toast";
+import InputMask from "react-input-mask";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -88,7 +89,10 @@ const Index = () => {
             <a href="#portfolio" className="text-sm tracking-wide hover:text-primary transition-colors">Портфолио</a>
             <a href="#contact" className="text-sm tracking-wide hover:text-primary transition-colors">Контакты</a>
           </div>
-          <Button variant="default" className="hidden md:flex">
+          <Button variant="default" className="hidden md:flex" onClick={() => {
+            const contactSection = document.getElementById('contact');
+            contactSection?.scrollIntoView({ behavior: 'smooth' });
+          }}>
             Заказать консультацию
           </Button>
           <button 
@@ -131,7 +135,11 @@ const Index = () => {
                 >
                   Контакты
                 </a>
-                <Button variant="default" className="w-full mt-2">
+                <Button variant="default" className="w-full mt-2" onClick={() => {
+                  setMobileMenuOpen(false);
+                  const contactSection = document.getElementById('contact');
+                  contactSection?.scrollIntoView({ behavior: 'smooth' });
+                }}>
                   Заказать консультацию
                 </Button>
               </div>
@@ -157,10 +165,16 @@ const Index = () => {
                 Создаём уникальные металлические элементы для вашего интерьера по индивидуальным эскизам
               </p>
               <div className="flex gap-4 pt-4">
-                <Button size="lg" className="font-light tracking-wide">
+                <Button size="lg" className="font-light tracking-wide" onClick={() => {
+                  const contactSection = document.getElementById('contact');
+                  contactSection?.scrollIntoView({ behavior: 'smooth' });
+                }}>
                   Обсудить проект
                 </Button>
-                <Button size="lg" variant="outline" className="font-light tracking-wide">
+                <Button size="lg" variant="outline" className="font-light tracking-wide" onClick={() => {
+                  const portfolioSection = document.getElementById('portfolio');
+                  portfolioSection?.scrollIntoView({ behavior: 'smooth' });
+                }}>
                   Наши работы
                 </Button>
               </div>
@@ -808,8 +822,8 @@ const Index = () => {
               </div>
               <div className="space-y-2">
                 <label className="text-sm tracking-wide">Телефон *</label>
-                <input 
-                  type="tel"
+                <InputMask
+                  mask="+7 (999) 999-99-99"
                   name="phone"
                   required
                   className="w-full px-4 py-3 bg-card border border-input focus:outline-none focus:ring-2 focus:ring-ring"
