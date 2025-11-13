@@ -506,6 +506,64 @@ const Index = () => {
         </div>
       </motion.section>
 
+      <section className="py-20 px-6">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div 
+            className="text-center mb-16"
+            {...fadeInUp}
+          >
+            <h2 className="text-4xl font-light mb-4">Почему выбирают нас</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Работаем с VIP-клиентами и создаём изделия премиум-класса
+            </p>
+          </motion.div>
+          <motion.div 
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <motion.div variants={staggerItem} transition={{ delay: 0 }} className="text-center space-y-3">
+              <div className="w-16 h-16 bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <Icon name="Award" size={32} className="text-primary" />
+              </div>
+              <h3 className="text-xl font-light">15+ лет опыта</h3>
+              <p className="text-sm text-muted-foreground">
+                Работаем с металлом с 2009 года и реализовали более 500 проектов
+              </p>
+            </motion.div>
+            <motion.div variants={staggerItem} transition={{ delay: 0.1 }} className="text-center space-y-3">
+              <div className="w-16 h-16 bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <Icon name="CheckCircle" size={32} className="text-primary" />
+              </div>
+              <h3 className="text-xl font-light">Гарантия качества</h3>
+              <p className="text-sm text-muted-foreground">
+                Используем только премиальные материалы и даём гарантию на все работы
+              </p>
+            </motion.div>
+            <motion.div variants={staggerItem} transition={{ delay: 0.2 }} className="text-center space-y-3">
+              <div className="w-16 h-16 bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <Icon name="Users" size={32} className="text-primary" />
+              </div>
+              <h3 className="text-xl font-light">Индивидуальный подход</h3>
+              <p className="text-sm text-muted-foreground">
+                Каждый проект уникален — работаем по эскизам клиента
+              </p>
+            </motion.div>
+            <motion.div variants={staggerItem} transition={{ delay: 0.3 }} className="text-center space-y-3">
+              <div className="w-16 h-16 bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <Icon name="Clock" size={32} className="text-primary" />
+              </div>
+              <h3 className="text-xl font-light">Точные сроки</h3>
+              <p className="text-sm text-muted-foreground">
+                Соблюдаем договорённости и сдаём проекты вовремя
+              </p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       <section id="contact" className="py-20 px-6">
         <div className="container mx-auto max-w-4xl">
           <motion.div 
