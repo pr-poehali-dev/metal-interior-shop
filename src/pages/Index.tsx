@@ -85,9 +85,36 @@ const Index = () => {
         <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
           <Logo />
           <div className="hidden md:flex gap-8 items-center">
-            <a href="#services" className="text-sm tracking-wide hover:text-primary transition-colors">Услуги</a>
-            <a href="#portfolio" className="text-sm tracking-wide hover:text-primary transition-colors">Портфолио</a>
-            <a href="#contact" className="text-sm tracking-wide hover:text-primary transition-colors">Контакты</a>
+            <a 
+              href="#services" 
+              className="text-sm tracking-wide hover:text-primary transition-colors cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              Услуги
+            </a>
+            <a 
+              href="#portfolio" 
+              className="text-sm tracking-wide hover:text-primary transition-colors cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              Портфолио
+            </a>
+            <a 
+              href="#contact" 
+              className="text-sm tracking-wide hover:text-primary transition-colors cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              Контакты
+            </a>
           </div>
           <Button variant="default" className="hidden md:flex" onClick={() => {
             const contactSection = document.getElementById('contact');
