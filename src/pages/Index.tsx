@@ -7,7 +7,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <header className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
         <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="text-2xl font-light tracking-wider">METAL ART</div>
+          <div className="text-2xl font-light tracking-wider">МШКС СТАЛЬ</div>
           <div className="hidden md:flex gap-8 items-center">
             <a href="#services" className="text-sm tracking-wide hover:text-primary transition-colors">Услуги</a>
             <a href="#portfolio" className="text-sm tracking-wide hover:text-primary transition-colors">Портфолио</a>
@@ -195,7 +195,7 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <div className="text-2xl font-light tracking-wider mb-4">METAL ART</div>
+              <div className="text-2xl font-light tracking-wider mb-4">МШКС СТАЛЬ</div>
               <p className="text-sm text-muted-foreground">
                 Премиальные металлические изделия для интерьера
               </p>
@@ -203,8 +203,9 @@ const Index = () => {
             <div>
               <h4 className="font-light mb-4">Контакты</h4>
               <div className="space-y-2 text-sm text-muted-foreground">
-                <p>+7 (495) 123-45-67</p>
-                <p>info@metalart.ru</p>
+                <p>+7 (967) 777-14-11</p>
+                <p>paul05.93@mail.ru</p>
+                <p>ул. Щербакова, 150</p>
               </div>
             </div>
             <div>
@@ -220,7 +221,7 @@ const Index = () => {
             </div>
           </div>
           <div className="mt-12 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-            <p>&copy; 2024 Metal Art. Все права защищены</p>
+            <p>&copy; 2024 МШКС Сталь. Все права защищены</p>
           </div>
         </div>
       </footer>
