@@ -225,6 +225,16 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      <a 
+        href="https://wa.me/79677771411"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 bg-[#25D366] hover:bg-[#20BA5A] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all z-50"
+        aria-label="Написать в WhatsApp"
+      >
+        <Icon name="MessageCircle" size={28} />
+      </a>
     </div>
   );
 };
