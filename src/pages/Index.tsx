@@ -564,7 +564,7 @@ const Index = () => {
 
       <footer className="py-12 px-6 bg-card border-t border-border">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             <div>
               <Logo className="mb-4" />
               <p className="text-sm text-muted-foreground">
@@ -577,17 +577,6 @@ const Index = () => {
                 <p>+7 (967) 777-14-11</p>
                 <p>paul05.93@mail.ru</p>
                 <p>ул. Щербакова, 150</p>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-light mb-4">Социальные сети</h4>
-              <div className="flex gap-4">
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  <Icon name="Instagram" size={20} />
-                </a>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  <Icon name="Facebook" size={20} />
-                </a>
               </div>
             </div>
           </div>
