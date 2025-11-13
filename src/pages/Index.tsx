@@ -514,7 +514,7 @@ const Index = () => {
           >
             <h2 className="text-4xl font-light mb-4">Почему выбирают нас</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Работаем с VIP-клиентами и создаём изделия премиум-класса
+              К каждому клиенту относимся как к VIP — создаём изделия премиум-класса для вас
             </p>
           </motion.div>
           <motion.div 
