@@ -261,7 +261,7 @@ const Index = () => {
             <motion.div variants={staggerItem} transition={{ delay: 0.5 }} className="group cursor-pointer">
               <div className="relative overflow-hidden mb-4">
                 <img 
-                  src="https://cdn.poehali.dev/projects/bcaf37e8-0466-425e-8e53-7b6b0a60cad1/files/3290f296-6b93-43ed-9742-24bcc672e757.jpg" 
+                  src="https://cdn.poehali.dev/projects/bcaf37e8-0466-425e-8e53-7b6b0a60cad1/files/5637c038-94e3-4062-b3f3-107bcdd74e64.jpg" 
                   alt="Лестничное ограждение"
                   className="w-full h-[350px] object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -269,6 +269,14 @@ const Index = () => {
               <h3 className="text-lg font-light mb-2">Лестничное ограждение</h3>
               <p className="text-sm text-muted-foreground">Полированная латунь, современный стиль</p>
             </motion.div>
+          </motion.div>
+          <motion.div 
+            className="mt-12 text-center"
+            {...fadeInUp}
+          >
+            <Button size="lg" variant="outline" className="font-light tracking-wide">
+              Смотреть все проекты
+            </Button>
           </motion.div>
         </div>
       </section>
