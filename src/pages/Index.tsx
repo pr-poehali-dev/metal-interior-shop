@@ -258,17 +258,6 @@ const Index = () => {
               <h3 className="text-lg font-light mb-2">Садовая мебель</h3>
               <p className="text-sm text-muted-foreground">Сталь с подсветкой, уличное применение</p>
             </motion.div>
-            <motion.div variants={staggerItem} transition={{ delay: 0.5 }} className="group cursor-pointer">
-              <div className="relative overflow-hidden mb-4">
-                <img 
-                  src="https://cdn.poehali.dev/projects/bcaf37e8-0466-425e-8e53-7b6b0a60cad1/files/5637c038-94e3-4062-b3f3-107bcdd74e64.jpg" 
-                  alt="Лестничное ограждение"
-                  className="w-full h-[350px] object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <h3 className="text-lg font-light mb-2">Лестничное ограждение</h3>
-              <p className="text-sm text-muted-foreground">Полированная латунь, современный стиль</p>
-            </motion.div>
           </motion.div>
           <motion.div 
             className="mt-12 text-center"
