@@ -1,6 +1,26 @@
 import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 import { Card } from "@/components/ui/card";
+import { motion } from "framer-motion";
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 60 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-100px" },
+  transition: { duration: 0.6, ease: "easeOut" }
+};
+
+const staggerContainer = {
+  initial: {},
+  whileInView: {},
+  viewport: { once: true, margin: "-100px" }
+};
+
+const staggerItem = {
+  initial: { opacity: 0, y: 40 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.5, ease: "easeOut" }
+};
 
 const Index = () => {
   return (
@@ -25,7 +45,12 @@ const Index = () => {
       <section className="pt-32 pb-20 px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
+            <motion.div 
+              className="space-y-6"
+              initial={{ opacity: 0, x: -60 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               <h1 className="text-5xl md:text-6xl font-light leading-tight">
                 Металлические изделия<br />
                 <span className="text-primary">премиум класса</span>
@@ -41,68 +66,97 @@ const Index = () => {
                   Наши работы
                 </Button>
               </div>
-            </div>
-            <div className="relative">
+            </motion.div>
+            <motion.div 
+              className="relative"
+              initial={{ opacity: 0, x: 60 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            >
               <img 
                 src="https://cdn.poehali.dev/projects/bcaf37e8-0466-425e-8e53-7b6b0a60cad1/files/dfb34752-5a01-44fc-8b56-02f6679abfe2.jpg" 
                 alt="Премиальное металлическое изделие"
                 className="w-full h-[500px] object-cover"
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       <section id="services" className="py-20 px-6 bg-card">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
+          <motion.div 
+            className="text-center mb-16"
+            {...fadeInUp}
+          >
             <h2 className="text-4xl font-light mb-4">Услуги и возможности</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Работаем с любыми металлами и воплощаем самые смелые дизайнерские решения
             </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="p-8 space-y-4 border-0 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
-                <Icon name="Pencil" size={24} className="text-primary" />
-              </div>
-              <h3 className="text-xl font-light">Разработка по эскизам</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Создаём изделия по вашим эскизам и идеям. Наши дизайнеры помогут визуализировать концепцию
-              </p>
-            </Card>
-            <Card className="p-8 space-y-4 border-0 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
-                <Icon name="Layers" size={24} className="text-primary" />
-              </div>
-              <h3 className="text-xl font-light">Интерьерные элементы</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Перегородки, панели, декоративные экраны, лестничные ограждения и другие элементы декора
-              </p>
-            </Card>
-            <Card className="p-8 space-y-4 border-0 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
-                <Icon name="Sparkles" size={24} className="text-primary" />
-              </div>
-              <h3 className="text-xl font-light">Премиум качество</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Используем латунь, сталь, бронзу и другие материалы высокого качества с идеальной обработкой
-              </p>
-            </Card>
-          </div>
+          </motion.div>
+          <motion.div 
+            className="grid md:grid-cols-3 gap-8"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <motion.div variants={staggerItem} transition={{ delay: 0 }}>
+              <Card className="p-8 space-y-4 border-0 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
+                  <Icon name="Pencil" size={24} className="text-primary" />
+                </div>
+                <h3 className="text-xl font-light">Разработка по эскизам</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Создаём изделия по вашим эскизам и идеям. Наши дизайнеры помогут визуализировать концепцию
+                </p>
+              </Card>
+            </motion.div>
+            <motion.div variants={staggerItem} transition={{ delay: 0.2 }}>
+              <Card className="p-8 space-y-4 border-0 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
+                  <Icon name="Layers" size={24} className="text-primary" />
+                </div>
+                <h3 className="text-xl font-light">Интерьерные элементы</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Перегородки, панели, декоративные экраны, лестничные ограждения и другие элементы декора
+                </p>
+              </Card>
+            </motion.div>
+            <motion.div variants={staggerItem} transition={{ delay: 0.4 }}>
+              <Card className="p-8 space-y-4 border-0 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
+                  <Icon name="Sparkles" size={24} className="text-primary" />
+                </div>
+                <h3 className="text-xl font-light">Премиум качество</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Используем латунь, сталь, бронзу и другие материалы высокого качества с идеальной обработкой
+                </p>
+              </Card>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       <section id="portfolio" className="py-20 px-6">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
+          <motion.div 
+            className="text-center mb-16"
+            {...fadeInUp}
+          >
             <h2 className="text-4xl font-light mb-4">Портфолио работ</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Каждый проект уникален и создан специально для конкретного интерьера
             </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="group cursor-pointer">
+          </motion.div>
+          <motion.div 
+            className="grid md:grid-cols-2 gap-8"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <motion.div variants={staggerItem} className="group cursor-pointer">
               <div className="relative overflow-hidden mb-4">
                 <img 
                   src="https://cdn.poehali.dev/projects/bcaf37e8-0466-425e-8e53-7b6b0a60cad1/files/3290f296-6b93-43ed-9742-24bcc672e757.jpg" 
@@ -112,8 +166,8 @@ const Index = () => {
               </div>
               <h3 className="text-xl font-light mb-2">Лестничное ограждение</h3>
               <p className="text-muted-foreground">Полированная латунь, современный стиль</p>
-            </div>
-            <div className="group cursor-pointer">
+            </motion.div>
+            <motion.div variants={staggerItem} transition={{ delay: 0.2 }} className="group cursor-pointer">
               <div className="relative overflow-hidden mb-4">
                 <img 
                   src="https://cdn.poehali.dev/projects/bcaf37e8-0466-425e-8e53-7b6b0a60cad1/files/b184a509-0f7d-4df7-b549-cfca78436825.jpg" 
@@ -123,12 +177,15 @@ const Index = () => {
               </div>
               <h3 className="text-xl font-light mb-2">Декоративная перегородка</h3>
               <p className="text-muted-foreground">Бронза с растительным орнаментом</p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-secondary text-secondary-foreground">
+      <motion.section 
+        className="py-20 px-6 bg-secondary text-secondary-foreground"
+        {...fadeInUp}
+      >
         <div className="container mx-auto max-w-4xl text-center space-y-6">
           <h2 className="text-4xl font-light">Индивидуальный подход</h2>
           <p className="text-lg leading-relaxed opacity-90">
@@ -139,17 +196,23 @@ const Index = () => {
             Обсудить ваш проект
           </Button>
         </div>
-      </section>
+      </motion.section>
 
       <section id="contact" className="py-20 px-6">
         <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-12">
+          <motion.div 
+            className="text-center mb-12"
+            {...fadeInUp}
+          >
             <h2 className="text-4xl font-light mb-4">Свяжитесь с нами</h2>
             <p className="text-muted-foreground">
               Расскажите о вашем проекте, и мы предложим решение
             </p>
-          </div>
-          <form className="space-y-6 max-w-xl mx-auto">
+          </motion.div>
+          <motion.form 
+            className="space-y-6 max-w-xl mx-auto"
+            {...fadeInUp}
+          >
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label className="text-sm tracking-wide">Имя</label>
@@ -187,7 +250,7 @@ const Index = () => {
             <Button size="lg" className="w-full font-light tracking-wide">
               Отправить заявку
             </Button>
-          </form>
+          </motion.form>
         </div>
       </section>
 
