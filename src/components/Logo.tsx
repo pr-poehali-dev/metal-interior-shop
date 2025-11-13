@@ -1,0 +1,17 @@
+const Logo = ({ className = "" }: { className?: string }) => {
+  return (
+    <div className={`flex items-center gap-3 ${className}`}>
+      <div className="relative w-12 h-12 border-2 border-foreground flex items-center justify-center">
+        <span className="text-2xl font-serif font-bold text-foreground">M</span>
+        <div className="absolute inset-y-2 left-1/2 w-[2px] bg-foreground"></div>
+        <span className="text-2xl font-serif font-bold text-foreground ml-1">S</span>
+      </div>
+      <div className="flex flex-col leading-tight">
+        <span className="text-[10px] font-medium tracking-wider text-muted-foreground">МШКС</span>
+        <span className="text-sm font-light tracking-widest">STEEL</span>
+      </div>
+    </div>
+  );
+};
+
+export default Logo;

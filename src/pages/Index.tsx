@@ -3,6 +3,7 @@ import Icon from "@/components/ui/icon";
 import { Card } from "@/components/ui/card";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import Logo from "@/components/Logo";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -30,7 +31,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <header className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
         <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="text-2xl font-light tracking-wider">МШКС СТАЛЬ</div>
+          <Logo />
           <div className="hidden md:flex gap-8 items-center">
             <a href="#services" className="text-sm tracking-wide hover:text-primary transition-colors">Услуги</a>
             <a href="#portfolio" className="text-sm tracking-wide hover:text-primary transition-colors">Портфолио</a>
@@ -304,7 +305,7 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <div className="text-2xl font-light tracking-wider mb-4">МШКС СТАЛЬ</div>
+              <Logo className="mb-4" />
               <p className="text-sm text-muted-foreground">
                 Премиальные металлические изделия для интерьера
               </p>
