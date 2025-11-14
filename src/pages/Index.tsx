@@ -185,11 +185,11 @@ const Index = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <h1 className="text-5xl md:text-6xl font-light leading-tight">
-                Металлические изделия<br />
-                <span className="text-primary">премиум класса</span>
+                Изделия из металла<br />
+                <span className="text-primary">и мебель на заказ</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Создаём уникальные металлические элементы для вашего интерьера по индивидуальным эскизам
+                Изготовление металлических изделий из латуни, нержавейки, стали премиум-класса. Мебель из металла для дома и офиса по индивидуальным проектам. Москва
               </p>
               <div className="flex gap-4 pt-4">
                 <Button size="lg" className="font-light tracking-wide" onClick={() => {
@@ -228,9 +228,9 @@ const Index = () => {
             className="text-center mb-16"
             {...fadeInUp}
           >
-            <h2 className="text-4xl font-light mb-4">Услуги и возможности</h2>
+            <h2 className="text-4xl font-light mb-4">Изготовление изделий из металла</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Работаем с любыми металлами и воплощаем самые смелые дизайнерские решения
+              Производство металлической мебели и изделий из латуни, нержавейки, стали. Металлоконструкции на заказ для дома и бизнеса
             </p>
           </motion.div>
           <motion.div 
@@ -245,9 +245,9 @@ const Index = () => {
                 <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
                   <Icon name="Pencil" size={24} className="text-primary" />
                 </div>
-                <h3 className="text-xl font-light">Разработка по эскизам</h3>
+                <h3 className="text-xl font-light">Мебель из металла на заказ</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Создаём изделия по вашим эскизам и идеям. Наши дизайнеры помогут визуализировать концепцию
+                  Столы, стулья, стеллажи, полки из нержавейки, латуни и стали. Разработка по индивидуальным эскизам
                 </p>
               </Card>
             </motion.div>
@@ -256,9 +256,9 @@ const Index = () => {
                 <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
                   <Icon name="Layers" size={24} className="text-primary" />
                 </div>
-                <h3 className="text-xl font-light">Интерьерные элементы</h3>
+                <h3 className="text-xl font-light">Декоративные изделия из металла</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Перегородки, панели, декоративные экраны, лестничные ограждения и другие элементы декора
+                  Перегородки, панели, лестничные ограждения из нержавейки, перила, декоративные экраны. Художественная обработка металла
                 </p>
               </Card>
             </motion.div>
@@ -267,9 +267,9 @@ const Index = () => {
                 <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
                   <Icon name="Sparkles" size={24} className="text-primary" />
                 </div>
-                <h3 className="text-xl font-light">Премиум качество</h3>
+                <h3 className="text-xl font-light">Работа с любыми металлами</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Используем латунь, сталь, бронзу и другие материалы высокого качества с идеальной обработкой
+                  Изделия из латуни, нержавеющей стали, бронзы, меди. Сварочные работы, ковка металла, гибка, резка. Обработка металла любой сложности
                 </p>
               </Card>
             </motion.div>
@@ -883,13 +883,59 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-16 px-6 bg-background">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div 
+            className="space-y-8 text-sm text-muted-foreground leading-relaxed"
+            {...fadeInUp}
+          >
+            <div>
+              <h2 className="text-2xl font-light text-foreground mb-4">Изготовление изделий из металла в Москве</h2>
+              <p className="mb-4">
+                Компания MHKS Steel специализируется на производстве металлических изделий и мебели на заказ в Москве. 
+                Мы работаем с латунью, нержавеющей сталью, бронзой, медью и другими металлами. Наше производство 
+                оснащено современным оборудованием для обработки металла любой сложности.
+              </p>
+              <p>
+                Изготавливаем металлическую мебель для дома и офиса: столы из металла, стулья, стеллажи из металла, 
+                полки из нержавейки. Выполняем изделия из латуни премиум-класса, декоративные панели из металла, 
+                лестничные ограждения из нержавейки, перила, декоративные экраны и перегородки.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="text-xl font-light text-foreground mb-3">Наши услуги по металлообработке</h3>
+              <p className="mb-3">
+                Металлоконструкции на заказ для жилых и коммерческих помещений. Сварочные работы любой сложности, 
+                художественная ковка металла, гибка, резка, полировка. Изделия из нержавейки для кухонь и ванных комнат.
+              </p>
+              <p>
+                Изготовление металлических изделий для интерьера: журнальные столики из металла, мебель из стали и дерева, 
+                стеллажи из металла в стиле лофт, кованые элементы декора. Производство металлоизделий премиум-класса 
+                с индивидуальным дизайном.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="text-xl font-light text-foreground mb-3">Обработка металла и материалы</h3>
+              <p>
+                Работаем с латунью, нержавеющей сталью (нержавейкой), бронзой, медью, чёрной сталью. Выполняем ковку металла, 
+                сварочные работы, резку, гибку, шлифовку, полировку до зеркального блеска. Изделия из латуни с патинированием, 
+                изделия из нержавейки с матовой или глянцевой поверхностью. Покраска металлических изделий порошковой краской 
+                в любой цвет по RAL. 15+ лет опыта работы с металлом.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       <footer className="py-12 px-6 bg-card border-t border-border">
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <Logo className="mb-4" />
               <p className="text-sm text-muted-foreground">
-                Премиальные металлические изделия для интерьера
+                Изготовление металлических изделий и мебели из латуни, нержавейки, стали на заказ в Москве
               </p>
             </div>
             <div>

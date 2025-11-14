@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://metal-interior-shop.poehali.dev/</loc>
+    <lastmod>2025-11-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://cdn.poehali.dev/files/bbacbab4-a4e4-41a7-908f-12b9be0f3046.jpeg</image:loc>
+      <image:title>Декоративная панель из латуни - изделия из металла на заказ</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cdn.poehali.dev/files/ffe43167-bf5c-440d-a08f-24029d267792.jpeg</image:loc>
+      <image:title>Кухонная полка из нержавеющей стали - металлическая мебель</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cdn.poehali.dev/files/a3f84a54-a4e3-4784-84bb-56ef1b5c4a5e.jpeg</image:loc>
+      <image:title>Журнальный столик из стали и дерева - мебель из металла на заказ</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cdn.poehali.dev/files/8962d003-dae9-4b9e-b2f4-54628cf0c380.jpeg</image:loc>
+      <image:title>Мебельный комплект с резной сталью - изделия из металла</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cdn.poehali.dev/files/27543029-d706-487e-bf7e-2817cc4aa5c5.jpeg</image:loc>
+      <image:title>Садовая мебель из металла с подсветкой</image:title>
+    </image:image>
+  </url>
+</urlset>
