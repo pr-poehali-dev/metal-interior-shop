@@ -507,17 +507,6 @@ const Index = () => {
             <motion.div variants={staggerItem} transition={{ delay: 1.8 }} className="group cursor-pointer">
               <div className="relative overflow-hidden mb-4">
                 <img 
-                  src="https://cdn.poehali.dev/files/83c8a668-9822-452b-9e93-91915efd3050.jpeg" 
-                  alt="Второй свет"
-                  className="w-full h-[350px] object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <h3 className="text-lg font-light mb-2">Второй свет</h3>
-              <p className="text-sm text-muted-foreground">Стальной каркас, панорамное стекло</p>
-            </motion.div>
-            <motion.div variants={staggerItem} transition={{ delay: 1.9 }} className="group cursor-pointer">
-              <div className="relative overflow-hidden mb-4">
-                <img 
                   src="https://cdn.poehali.dev/files/2df0c270-3e0f-444f-8ec2-2a11c5388c86.jpeg" 
                   alt="Кровать с балдахином"
                   className="w-full h-[350px] object-cover group-hover:scale-105 transition-transform duration-500"
