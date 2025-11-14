@@ -468,7 +468,7 @@ const Index = () => {
                   className="w-full h-[350px] object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <h3 className="text-lg font-light mb-2">Остекление крыши</h3>
+              <h3 className="text-lg font-light mb-2">Крыша со стеклом</h3>
               <p className="text-sm text-muted-foreground">Стальной каркас, панорамное стекло</p>
             </motion.div>
             <motion.div variants={staggerItem} transition={{ delay: 1.5 }} className="group cursor-pointer">
@@ -508,11 +508,11 @@ const Index = () => {
               <div className="relative overflow-hidden mb-4">
                 <img 
                   src="https://cdn.poehali.dev/files/83c8a668-9822-452b-9e93-91915efd3050.jpeg" 
-                  alt="Остекление второго света"
+                  alt="Второй свет"
                   className="w-full h-[350px] object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <h3 className="text-lg font-light mb-2">Остекление второго света</h3>
+              <h3 className="text-lg font-light mb-2">Второй свет</h3>
               <p className="text-sm text-muted-foreground">Стальной каркас, панорамное стекло</p>
             </motion.div>
             <motion.div variants={staggerItem} transition={{ delay: 1.9 }} className="group cursor-pointer">
