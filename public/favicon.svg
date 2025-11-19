@@ -1,16 +1,16 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- Background -->
-  <rect width="64" height="64" fill="#8B7355"/>
+  <rect width="64" height="64" fill="#1a1a1a"/>
   
   <!-- Border -->
-  <rect x="12" y="12" width="40" height="40" stroke="#F5F5F0" stroke-width="2" fill="none"/>
+  <rect x="10" y="10" width="44" height="44" stroke="#e4a853" stroke-width="2.5" fill="none"/>
   
   <!-- M letter -->
-  <text x="22" y="40" font-family="serif" font-size="20" font-weight="bold" fill="#F5F5F0">M</text>
+  <text x="18" y="42" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#e4a853">M</text>
   
   <!-- Vertical divider -->
-  <line x1="32" y1="16" x2="32" y2="48" stroke="#F5F5F0" stroke-width="2"/>
+  <line x1="32" y1="14" x2="32" y2="50" stroke="#e4a853" stroke-width="2"/>
   
   <!-- S letter -->
-  <text x="38" y="40" font-family="serif" font-size="20" font-weight="bold" fill="#F5F5F0">S</text>
+  <text x="36" y="42" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#e4a853">S</text>
 </svg>
